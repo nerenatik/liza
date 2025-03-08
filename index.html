@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>С 8 Марта! 🌸</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #FFB6C1, #FF69B4, #FF1493);
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            padding: 40px;
+            min-height: 100vh;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+        .photo-frame {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #fff;
+            box-shadow: 0 0 30px #FF69B4;
+        }
+        .petals {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .petal {
+            position: absolute;
+            background: #fff;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: fall 8s linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="petals" id="petals"></div>
+    <div class="container">
+        <div class="photo-frame">
+            <img src="photo_2025-02-23_22-27-48 (2).jpg" alt="Нежность">
+        </div>
+        <h1>🌹 Ты - моя вечность! С 8 Марта! 🌹</h1>
+        <iframe style="border-radius:12px; margin-top: 30px;" 
+                src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl" 
+                width="100%" 
+                height="352" 
+                frameborder="0">
+        </iframe>
+    </div>
+    <script>
+        // Добавление лепестков
+        for (let i = 0; i < 30; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('petals').appendChild(petal);
+        }
+    </script>
+</body>
+</html>
